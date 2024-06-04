@@ -1,0 +1,132 @@
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Colors for this site */
+    --color-primary: var(--dark-cyan);
+    --color-heading: var(--very-dark-blue);
+    --color-body: var(--dark-grayish-blue);
+    --bg-body: var(--cream);
+    --bg-secondary: var(--white);
+
+    /* Typography for this site */
+    --ff-body: "Montserrat", sans-serif;
+    --ff-heading: "Fraunces", serif;
+
+    --fs-900: 2rem;
+
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-body);
+    color: var(--color-body);
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+main {
+    padding: 0 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: var(--ff-heading);
+    font-weight: 900;
+    color: var(--color-heading);
+    font-size: var(--fs-900);
+    margin: 0 0 1rem;
+    line-height: 1;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+img,
+video,
+iframe {
+    max-inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--bg-secondary);
+    border: 0;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+}
+
+.product_preview_card {
+    max-width: 600px;
+    background-color: var(--bg-secondary);
+    margin: 2rem auto;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 560px) {
+    .product_preview_card {
+        flex-direction: row;
+        align-items: center;
+    }
+    .product_preview_card > * {
+        flex: 1 1 50%;
+    }
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.product-category {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5ch;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 1rem;
+}
+
+.price-current {
+    font-family: var(--ff-body);
+    font-size: var(--fs-900);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.price-regular {
+    text-decoration: line-through;
+}
